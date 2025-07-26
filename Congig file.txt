@@ -1,0 +1,22 @@
+
+@Configuration                                                           
+public class ApplicationBeanConiguration {                               
+                                                                         
+    @Bean                                                                
+                                                                         
+    public ModelMapper modelMapper(){                                    
+        return  new ModelMapper();                                       
+    }                                                                    
+      @Bean                                                              
+    public Gson gson(){                                                  
+        return new Gson()                                                
+                .newBuilder().setPrettyPrinting()                        
+                .excludeFieldsWithoutExposeAnnotation()                  
+                .create();                                               
+    }                                                                    
+    @Bean                                                                
+    public Validator validator(){                                        
+        return Validation.buildDefaultValidatorFactory().getValidator(); 
+    }                                                                    
+}                                                                        
+                                                                         
